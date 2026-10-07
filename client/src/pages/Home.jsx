@@ -32,7 +32,7 @@ function Home() {
             </header>
 
             <section id="sky" className="sky" aria-label="Constellation map of my work">
-                <svg viewBox="0 0 800 500">
+                <svg viewBox="80 110 680 400">
                     {links.map(([from, to]) => {
                     const fromStar = stars.find((star) => star.slug === from);
                     const toStar = stars.find((star) => star.slug === to);
