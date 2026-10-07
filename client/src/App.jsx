@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import './App.css';
 import Star from './components/Star';
-import stars, { links } from './data/stars';
+import stars, { links, types } from './data/stars';
 
 function App() {
 
   const [hoveredSlug, setHoveredSlug] = useState(null);
+  const [hoveredType, setHoveredType] = useState(null);
   const hoveredStar = stars.find((star) => star.slug === hoveredSlug);
   const activeConstellations = hoveredStar?.constellations ?? [];
 
   function isDimmed(star) {
+    if (hoveredType !== null) return star.type !== hoveredType;
     if (hoveredSlug === null) return false;
 
     const sharesOne = star.constellations.some((c) => activeConstellations.includes(c));
@@ -47,9 +49,38 @@ function App() {
             onLeave={() => setHoveredSlug(null)}
             isHovered={hoveredSlug === star.slug}
             isDimmed={isDimmed(star)}
+            type={star.type}
+            title={star.title}
           />
         ))}
+
+        {hoveredStar && (
+          <text
+            x={hoveredStar.x}
+            y={hoveredStar.y - 15}
+            className="label"
+          >
+            {hoveredStar.title} · {hoveredStar.type}
+          </text>
+        )}
+
       </svg>
+      <ul className="legend">
+        {types.map((type) => (
+          <li key={type.id}>
+            <button
+              className="legend-item"
+              onMouseEnter={() => setHoveredType(type.id)}
+              onMouseLeave={() => setHoveredType(null)}
+              onFocus={() => setHoveredType(type.id)}
+              onBlur={() => setHoveredType(null)}
+            >
+              <span className={`legend-dot type-${type.id}`}></span>
+              {type.label}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
 
   )

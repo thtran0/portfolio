@@ -9,13 +9,26 @@ h1 {
 
 .star {
   fill: white;
-  filter: drop-shadow(0 0 6px rgba(210, 207, 194, 0.8));
-  transition: r 0.3s ease, fill 0.3s ease;
+  transition: r 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
 }
 
-.star:hover {
-    fill: #f6e7b4;
-    filter: drop-shadow(0 0 6px rgba(246, 231, 180, 0.8));
+.type-experience {
+  /* remove line 17 */
+  fill: #fbe7b5; 
+  filter: drop-shadow(0 0 6px rgba(246, 210, 122, 0.9));
+}
+
+.type-project {
+  filter: drop-shadow(0 0 6px rgba(244, 166, 200, 0.9));
+}
+
+.type-research {
+  filter: drop-shadow(0 0 6px rgba(185, 168, 245, 0.9));
+}
+
+.type-leadership {
+  fill: #c4ece8;
+  filter: drop-shadow(0 0 6px rgba(143, 214, 208, 0.9));
 }
 
 .link {
@@ -28,5 +41,52 @@ h1 {
 .dimmed {
   opacity: 0.2;
   transition: opacity 0.3s ease;
+}
+
+.label {
+  fill: #f2efe9;
+  font-size: 14px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  color: #f2efe9;
+  font-size: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.legend-item:focus-visible {
+  outline: 1.5px solid #f2efe9;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.star:focus-visible {
+  outline: none;
+  stroke: #f2efe9;
+  stroke-width: 1.5;
 }
 
