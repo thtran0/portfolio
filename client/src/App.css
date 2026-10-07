@@ -83,9 +83,55 @@ h1 {
   background: white;
 }
 
+.star:focus {
+  outline: none;
+}
+
 .star:focus-visible {
   outline: none;
   stroke: #f2efe9;
   stroke-width: 1.5;
 }
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.tagline {
+  color: #e4e0f5;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.intro {
+  color: #c9c6d9;
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+.scroll-cue {
+  margin-top: 2rem;
+  color: #f2efe9;
+  text-decoration: none;
+}
+
+.sky {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 
