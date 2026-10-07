@@ -10,11 +10,10 @@ h1 {
 .star {
   fill: white;
   transition: r 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .type-experience {
-  /* remove line 17 */
-  fill: #fbe7b5; 
   filter: drop-shadow(0 0 6px rgba(246, 210, 122, 0.9));
 }
 

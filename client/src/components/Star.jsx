@@ -1,5 +1,12 @@
-function Star({ x, y, size, type, title, isHovered, isDimmed, onHover, onLeave }) {
+function Star({ x, y, size, type, title, isHovered, isDimmed, onHover, onLeave, onSelect }) {
   const className = `star type-${type}${isDimmed ? " dimmed" : ""}`;
+
+  function handleKeyDown(event) {
+     if (event.key === "Enter" || event.key === " ") {
+       event.preventDefault();
+       onSelect();
+     }
+   }
 
   return (
     <circle
@@ -13,6 +20,9 @@ function Star({ x, y, size, type, title, isHovered, isDimmed, onHover, onLeave }
       onFocus={onHover}
       onBlur={onLeave}
       aria-label={title}
+      onClick={onSelect}
+      onKeyDown={handleKeyDown}
+      role="link"
     />
   );
 }

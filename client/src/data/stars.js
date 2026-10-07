@@ -6,7 +6,7 @@ const stars = [
     { slug: "umessage", title: "uMessage", x: 600, y: 370, size: 4, constellations: ["connection"], type: "project"},
     { slug: "scheduling", title: "Scheduling Tool", x: 620, y: 480, size: 3, constellations: ["connection"], type: "project"},
     { slug: "time", title: "Time Tool", x: 700, y: 410, size: 3, constellations: ["connection"], type: "project"},
-    { slug: "ambassador", title: "Lead Ambassador", x: 450, y: 320, size: 6, constellations: ["care", "community"], type: "experience"},
+    { slug: "ambassador", title: "Lead Ambassador", x: 450, y: 320, size: 6, constellations: ["care", "community"], type: "leadership"},
 ];
 
 export const links = [
