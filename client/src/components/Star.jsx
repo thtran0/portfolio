@@ -1,20 +1,14 @@
-import { useState } from "react";
-
-
-function Star({ x, y, size }) {
-  const [isHovered, setIsHovered] = useState(false);
-
+function Star({ x, y, size, isHovered, isDimmed, onHover, onLeave }) {
   return (
     <circle
-      className="star"
+      className={isDimmed ? "star dimmed" : "star"}
       cx={x}
       cy={y}
       r={isHovered ? size * 1.5 : size}
-      fill="white"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
     />
   );
 }
 
- export default Star;
+export default Star;
